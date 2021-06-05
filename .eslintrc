@@ -1,0 +1,12 @@
+{
+    "extends": "airbnb-base",
+    "env": {
+        "jest": true,
+        "node": true
+    },
+    "rules": {
+        "linebreak-style": ["error", "windows"],
+        "indent": ["error", 4],
+        "max-len": [1, 120, { "tabWidth": 4, "ignoreComments": true }]
+    }
+}
