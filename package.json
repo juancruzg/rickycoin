@@ -11,11 +11,28 @@
     "eslint": "^7.27.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.23.4",
+    "jest": "^27.0.4",
     "nodemon": "^2.0.7"
   },
   "scripts": {
-      "start": "babel-node index.js",
-      "nodemon": "nodemon --exec yarn start",
-      "lint": "eslint index.js src"
+    "start": "babel-node ./src/service/index.js",
+    "start:2": "set HTTP_PORT=3001 && set P2P_PORT=5001 && set PEERS=ws:localhost:5000 && yarn start",
+    "start:3": "set HTTP_PORT=3002 && set P2P_PORT=5002 && set PEERS=ws:localhost:5000,ws:localhost:5001 && yarn start",
+    "nodemon": "nodemon --exec yarn start",
+    "lint": "eslint index.js src",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "miner": "babel-node miner.js"
+  },
+  "dependencies": {
+    "crypto-js": "^4.0.0",
+    "elliptic": "^6.5.4",
+    "express": "^4.17.1",
+    "ws": "^7.4.6"
+  },
+  "jest": {
+    "silent": true,
+    "verbose": true,
+    "testEnvironment": "node"
   }
 }
